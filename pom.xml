@@ -18,6 +18,7 @@
     <artifactId>portabull-hrms</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>portabull-hrms</name>
+
     <description>An Portabull HRMS (Human Resource Management System) is a comprehensive software solution designed to
         manage employee details, streamline payroll processing, track attendance, handle benefits administration, and
         support recruitment and performance management. It centralizes HR functions to improve efficiency, ensure
@@ -85,11 +86,62 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+
+
+
+
+
+
+
+
+
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+        <!-- Exclude Logback to avoid SLF4J multiple bindings issue -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-to-slf4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- Ensure Log4j2 to SLF4J bridge is included -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+        </dependency>
+
+
+
+
+
+
+
+
+
+
+
+
+
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.7.3</version>
         </dependency>
+
+
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -99,6 +151,9 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+
+
 
 
         <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
