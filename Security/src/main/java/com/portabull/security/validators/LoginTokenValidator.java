@@ -23,7 +23,7 @@ public class LoginTokenValidator {
     }
 
 
-    @Before("execution(* com.portabull.hrms.controllers.LoginController.*(..))")
+    @Before("execution(* com.portabull.controllers.LoginController.*(..))")
     public void beforeAdvice() {
         HttpServletRequest currentRequest = RequestHelper.getCurrentRequest();
         String token = currentRequest.getHeader("X-Auth-Token");
